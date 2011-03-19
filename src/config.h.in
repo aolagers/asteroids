@@ -1,0 +1,13 @@
+#ifndef @PROJECT_SHORT_NAME@_CONFIG_H
+#define @PROJECT_SHORT_NAME@_CONFIG_H
+
+/* Note: CMake autogenerates build/src/config.h from src/config.h.in */
+/* #include "config.h" to use the generated file */
+
+#define PROJECT_DATA_DIR "@PROJECT_DATA_DIR@"
+#define PROJECT_SHORT_NAME "@PROJECT_SHORT_NAME@"
+#define PROJECT_LONG_NAME "@PROJECT_LONG_NAME@"
+#define PROJECT_VERSION "@PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@"
+
+#endif
+
