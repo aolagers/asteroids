@@ -16,6 +16,7 @@ class Asteroid;
 class PhysicalObject;
 class Projectile;
 class Player;
+class Trail;
 class Hud;
 class Explosion;
 class Sounds;
@@ -66,6 +67,7 @@ class Game {
 		boost::ptr_vector<Player>& getPlayers() { return players; }
 		boost::ptr_vector<PhysicalObject>& getObjects() { return objects; }
 		boost::ptr_vector<Explosion>& getExplosions() { return explosions; }
+		boost::ptr_vector<Trail>& getTrails() { return trails; }
 		
 		void setHud(Hud* h) { hud = h; }
 		void setHuman(Player* p) { human = p; }
@@ -95,6 +97,7 @@ class Game {
 		boost::ptr_vector<Asteroid> asteroids;
 		boost::ptr_vector<Projectile> projectiles;
 		boost::ptr_vector<Explosion> explosions;
+		boost::ptr_vector<Trail> trails;
 
 //		std::vector<Asteroid> a;
 

@@ -50,7 +50,6 @@ class PhysicalObject : boost::noncopyable {
 	private:
 
 		Game *g;
-		//irr::scene::ISceneNode *node;
 		NodeWrapper node;
 
 		irr::core::vector3df speed;

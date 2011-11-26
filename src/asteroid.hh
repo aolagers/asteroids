@@ -4,6 +4,7 @@
 #include "game.hh"
 #include "sounds.hh"
 #include "explosion.hh"
+#include "trail.hh"
 #include "player.hh"
 
 #include "physicalobject.hh"
@@ -30,6 +31,7 @@ class Asteroid : public PhysicalObject {
 	private:
 		irr::core::vector3df spin;
 		int scale;
+		irr::f32 trailTimer;
 };
 
 

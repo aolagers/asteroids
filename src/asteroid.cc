@@ -7,7 +7,7 @@ double getRand(double max = 1.0) {
 }
 
 Asteroid::Asteroid(Game *g, irr::core::vector3df pos,
-		irr::core::vector3df speed, int scale) : PhysicalObject(g), scale(scale) {
+		irr::core::vector3df speed, int scale) : PhysicalObject(g), scale(scale), trailTimer(0) {
 
 
 	scene::IMesh* mesh = getGame()->getSmgr()->getMesh(PROJECT_DATA_DIR "/asteroid2.dae");	
@@ -34,6 +34,11 @@ Asteroid::Asteroid(Game *g, irr::core::vector3df pos,
 void Asteroid::update(irr::f32 timeStep) {
 	setPosition(getPosition() + getSpeed() * timeStep);
 	rotate(spin);
+	trailTimer += timeStep;
+	if (trailTimer > 0.1f) {
+		getGame()->getTrails().push_back(new Trail(getGame(), getPosition()));
+		trailTimer = 0;
+	}
 }
 
 void Asteroid::destruct() {

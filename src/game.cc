@@ -5,6 +5,7 @@
 #include "hud.hh"
 #include "physicalobject.hh"
 #include "asteroid.hh"
+#include "trail.hh"
 #include "projectile.hh"
 #include "explosion.hh"
 #include "humanplayer.hh"
@@ -149,6 +150,7 @@ void Game::updateObjects(irr::f32 timeStep) {
 	projectiles.erase_if(checkRemove);
 	asteroids.erase_if(checkRemove);
 	explosions.erase_if(checkRemove);
+	trails.erase_if(checkRemove);
 
 	applyGravitation(timeStep);
 
@@ -162,7 +164,9 @@ void Game::updateObjects(irr::f32 timeStep) {
 		it->update(timeStep);
 	for (it = asteroids.begin(); it != asteroids.end(); it++)
 		it->update(timeStep);
-	for (it = explosions.begin(); it != explosions.end();it++)
+	for (it = explosions.begin(); it != explosions.end(); it++)
+		it->update(timeStep);
+	for (it = trails.begin(); it != trails.end(); it++)
 		it->update(timeStep);
 
 	boost::ptr_vector<Projectile>::iterator p_it;
